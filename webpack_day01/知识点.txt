@@ -1,0 +1,41 @@
+## webpack安装
+- 安装本地的webpack
+- webpack webpack-cli
+
+## webpack可以进行0配置
+- 打包工具=》输出后的结果（js模块）
+- 打包（支持我们的js的模块化）
+
+## 手动配置webpack
+- 默认配置文件的名字是webpack.config.js
+
+## 把es6转换为es5
+- babel-loader js转换器
+- @babel/core 核心语法
+- @babel/preset-env 向下转换的标准，presets的目标
+- 如果出现一些高级语法转换不了的情况，需要装相应的插件，plugins中添加装载的插件
+
+## loader的类型
+- pre 前置执行的loader
+- normal 普通的loader
+- lint 内联的loader
+- post 后置的loader
+
+## 暴露全局
+- import $ from 'expose-loader?$!jquery';
+- {
+    test:require.resolve('jquery'),
+    use:'expose-loader?$'
+  }
+
+## webpack打包图片的三种方式
+- 1）在js中创建图片来引入
+- 2）在css引入 如：background:('url')
+- 3）<img src="" alt=""/>
+- file-loader 默认会在内部生成一张图片，到build目录下，把生成的图片名字返回回来
+
+## webpack sourcemap
+- devtool:'source-map' 增加映射文件，可以帮助我们调试代码
+- devtool:'eval-source-map' 不会产生单独的文件，但是可以显示行和列
+- devtool:'cheap-module-source-map' 产生后你可以保留起来
+- devtool:'cheap-module-eval-source-map' 不会产生长文件，集成在打包后的文件中，不会产生列
